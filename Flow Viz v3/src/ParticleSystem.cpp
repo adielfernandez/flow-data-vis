@@ -43,8 +43,6 @@ void ParticleSystem::addParticles(int num){
             p.pos.set(-portalDist, ofRandom(boundingBoxDim.y), ofRandom(boundingBoxDim.z));
             p.setup();
             
-//            particles[numParticles] = p;
-//            numParticles++;
             particles.push_back(p);
             
         }
@@ -226,9 +224,6 @@ ofVec3f ParticleSystem::interpolatedVel(ofVec3f _pos){
     //Interpolate the frontCenter and behindCenter velocities
     ofVec3f centerVel;
     centerVel = behindCenter.getInterpolated(frontCenter, pctX);
-    
-//    cout << "LL: " << iLowerLeft << " UL: " << iUpperLeft << " UR: " << iUpperRight << " LR: " << iLowerRight << endl;
-//    cout << "LB: " << leftBottom1 << " LT: " << leftTop1 << " RT: " << rightTop1 << " RB: " << rightBottom1 << endl;
     
     cout << centerVel << endl;
     

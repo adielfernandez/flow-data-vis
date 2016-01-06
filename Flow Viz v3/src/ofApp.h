@@ -28,15 +28,28 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
     
+    //UI Stuff
     void drawUI();
     void drawLoadingWidget();
     void drawAxes();
     void drawBoundingBox();
     
+    ofTrueTypeFont axesFont;
+    ofTrueTypeFont textFont;
+    ofImage titleImg;
+    ofImage velocityKey;
+    ofImage camGuide;
+    ofImage flowDirection;
+    
+    //XYZ Axis Arrows
+    ofConePrimitive coneX;
+    ofConePrimitive coneY;
+    ofConePrimitive coneZ;
+    
     float getBillboardAngle(ofVec3f globalPos);
     ofVec3f getBillboardVec(ofVec3f globalPos);
     
-    //Data and Threaded slicing
+    //Threaded slicing
     ThreadedSlicer Slicer;
     
     bool allLoaded;
@@ -46,25 +59,11 @@ class ofApp : public ofBaseApp{
     ofColor loadColor;
     
     
+    //Actual Data
     int sliceDirection;
     vector<Slice> slicesX;
     vector<Slice> slicesY;
     vector<Slice> slicesZ;
-    
-    
-    //UI Stuff
-    ofTrueTypeFont axesFont;
-    ofTrueTypeFont textFont;
-    ofImage titleImg;
-    ofImage velocityKey;
-    ofImage camGuide;
-    ofImage flowDirection;
-    
-    //Axis
-    ofConePrimitive coneX;
-    ofConePrimitive coneY;
-    ofConePrimitive coneZ;
-    
     
     ofVec3f dataDim;
     ofVec3f boundingBoxDim;
@@ -73,10 +72,7 @@ class ofApp : public ofBaseApp{
     #define numCircles 40
     float circleHeights[numCircles];
 
-    
-    
-    
-    
+        
     //maximum values for each dimension
     //(found algorithmically from previous data vis)
     const double minX = 0.0;

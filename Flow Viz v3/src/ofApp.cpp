@@ -22,7 +22,6 @@ void ofApp::setup(){
     //    u: -0.00010852 to 0.823162
     //    v: -0.0997344  to 0.122762
     //    w: -0.126819   to 0.143105
-    
         
     viewingSlice = 0;
 
@@ -37,7 +36,7 @@ void ofApp::setup(){
     allLoaded = false;
 
     
-    //----------SLICING----------
+    //SLICING
     Slicer.startSlicer(scaleFactor, &slicesZ, 2, &zLoaded);
     loadString = "Z-Axis";
     loadColor = ofColor::blue;
@@ -49,6 +48,8 @@ void ofApp::setup(){
     viewingSlice = 0;
     nonViewingTrans = 1.0;
     drawMode = 3;
+    
+    
     
     //set up font
     axesFont.load("geosans.ttf", 40);
@@ -91,7 +92,6 @@ void ofApp::setup(){
     
 
     //Camera settings
-    //    camera.setDistance(2000);
     float angleAboveHoriz = -30;
     float dist = 2000;
     
@@ -164,7 +164,6 @@ void ofApp::update(){
             
             //since x is now done, pass it to the particle system
             particleSys.loadData(&slicesX);
-//            particlesOn = true;
         }
         
         
@@ -298,17 +297,7 @@ void ofApp::draw(){
     camera.end();
 
 
-    
-    
     drawUI();
-
-
-    
-    
-    
-//    ofSetColor(255);
-//    ofDrawBitmapString("Framerate: " + ofToString(ofGetFrameRate()), 600, 15);
-//    ofDrawBitmapString("Particles: " + ofToString(particleSys.particles.size()), 600, 30);
 
     
 }
@@ -489,6 +478,9 @@ void ofApp::drawAxes(){
 }
 
 //--------------------------------------------------------------
+//Billboarding code adapted from Zach Lieberman's Sample code:
+//https://forum.openframeworks.cc/t/billboard-using-ofnode/14142
+
 float ofApp::getBillboardAngle(ofVec3f globalPos){
 
 
@@ -570,7 +562,6 @@ void ofApp::keyPressed(int key){
     
     
     if(key == 'r' || key == 'R'){
-//        camera.reset();
         camera.setGlobalPosition(globalCamPos);
         camera.lookAt(ofVec3f(0));
     }

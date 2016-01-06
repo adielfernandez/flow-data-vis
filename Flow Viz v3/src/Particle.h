@@ -43,8 +43,6 @@ public:
     bool dying;
     int age, deathTime;
     
-    ofVboMesh mesh;
-    
     vector<ofVec3f> points;
     vector<ofColor> cols;
     

@@ -32,25 +32,7 @@ void Particle::setup(){
     //XZ plane
     tri2a.set(0, 0, width/2);
     tri2b.set(0, 0, -width/2);
-    
-//    ofFloatColor tipCol = ofFloatColor(1.0, 0.75, 0.0, 1.0);
-//    ofFloatColor bodyCol = ofFloatColor(1.0, 0.75, 0.0, 0.0);
-//    
-//    mesh.setMode(OF_PRIMITIVE_TRIANGLE_FAN);
-//    
-//    mesh.addVertex(tip);
-//    mesh.addColor(tipCol);
-//
-//    mesh.addVertex(tri1a);
-//    mesh.addColor(bodyCol);
-//    mesh.addVertex(tri2a);
-//    mesh.addColor(bodyCol);
-//    mesh.addVertex(tri1b);
-//    mesh.addColor(bodyCol);
-////    mesh.addVertex(tri2b);
-////    mesh.addColor(bodyCol);
-//    mesh.addVertex(tri1a);
-//    mesh.addColor(bodyCol);
+
     
     col = ofColor(100, 255, 0, 255 * 0.5);
     
@@ -103,7 +85,6 @@ void Particle::update(){
 void Particle::drawTrails(){
     
     if(points.size() > 1){
-        //        ofSetLineWidth(1);
         
         for(int i = 0; i < points.size() - 1; i++){
             ofSetColor(cols[i]);
@@ -128,7 +109,6 @@ void Particle::draw(){
     
     ofPopMatrix();
     
-//    mesh.draw();
 
 }
 
