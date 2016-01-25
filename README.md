@@ -20,3 +20,6 @@ simulation
 
 -Add UI elements for changing visualization states and particle features.
 
+
+For more Information and photos, please visit:
+http://adielfernandez.com/projects/flow-data-vis.html
